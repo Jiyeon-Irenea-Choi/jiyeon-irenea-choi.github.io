@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jiyeon Choi 崔至延 | Scholar</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+TC:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --accent: #2c5f8a;
+    --accent-light: #4a8ab5;
+    --gold: #b8963e;
+    --cream: #f9f6f0;
+    --paper: #ffffff;
+    --muted: #6b7280;
+    --border: #e2ddd6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'EB Garamond', 'Noto Serif TC', Georgia, serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.75;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(249,246,240,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex; gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 60px;
+  }
+
+  .hero-text {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 5rem 4rem 5rem 5rem;
+    background: var(--cream);
+  }
+
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+  }
+
+  .hero-name-zh {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+    font-weight: 300;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-tagline {
+    font-size: 1rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 2.5rem;
+    max-width: 420px;
+    line-height: 1.8;
+  }
+
+  .hero-meta {
+    display: flex; flex-direction: column; gap: 0.4rem;
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-meta span { display: flex; align-items: center; gap: 0.5rem; }
+
+  .hero-contact {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.6rem 1.4rem;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    transition: all 0.2s;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .btn:hover { background: var(--accent); color: white; }
+
+  .btn-primary { background: var(--accent); color: white; }
+  .btn-primary:hover { background: var(--accent-light); border-color: var(--accent-light); }
+
+  .hero-visual {
+    background: var(--accent);
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .hero-visual-inner {
+    text-align: center;
+    color: white;
+    padding: 3rem;
+  }
+
+  .hero-photo-placeholder {
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.3);
+    margin: 0 auto 2rem;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 4rem;
+  }
+
+  .hero-visual-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 0.85;
+    line-height: 2;
+  }
+
+  .hero-visual-zh {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.85rem;
+    opacity: 0.65;
+    margin-top: 0.5rem;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 6rem 5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    display: flex; align-items: baseline; gap: 1.5rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  .section-title-zh {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 1rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    margin-bottom: 1.2rem;
+    color: var(--ink);
+    font-size: 1.05rem;
+  }
+
+  .about-text p:first-child::first-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    float: left;
+    line-height: 0.75;
+    margin-right: 0.1em;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .about-sidebar {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    padding: 2rem;
+  }
+
+  .sidebar-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .interest-list {
+    list-style: none;
+  }
+
+  .interest-list li {
+    font-size: 0.9rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink);
+    display: flex; align-items: flex-start; gap: 0.5rem;
+  }
+
+  .interest-list li:last-child { border-bottom: none; }
+  .interest-list li::before { content: "—"; color: var(--accent); flex-shrink: 0; }
+
+  /* ── RESEARCH ── */
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .research-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+  }
+
+  .research-card:hover {
+    box-shadow: 0 8px 30px rgba(44,95,138,0.1);
+    transform: translateY(-2px);
+  }
+
+  .research-card-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .research-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+
+  .research-card p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  .research-card-funder {
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-style: italic;
+  }
+
+  /* ── PUBLICATIONS ── */
+  .pub-filter {
+    display: flex; gap: 0.8rem; margin-bottom: 2.5rem; flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 0.4rem 1rem;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.85rem;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.05em;
+  }
+
+  .filter-btn.active, .filter-btn:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+
+  .pub-list { list-style: none; }
+
+  .pub-item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: start;
+  }
+
+  .pub-year {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--accent);
+    font-weight: 600;
+    min-width: 45px;
+    padding-top: 0.1rem;
+  }
+
+  .pub-title {
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 0.3rem;
+    font-style: italic;
+  }
+
+  .pub-meta {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .pub-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 0.15rem 0.5rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+
+  /* ── TEACHING ── */
+  .teaching-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .teaching-card {
+    border-left: 3px solid var(--accent);
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+    background: var(--paper);
+  }
+
+  .teaching-institution {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  .teaching-period {
+    font-size: 0.82rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .course-list {
+    list-style: none;
+  }
+
+  .course-list li {
+    font-size: 0.9rem;
+    color: var(--ink);
+    padding: 0.3rem 0;
+    display: flex; gap: 0.5rem; align-items: flex-start;
+  }
+
+  .course-list li::before { content: "·"; color: var(--accent); font-size: 1.2rem; line-height: 1.2; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 3rem;
+    font-size: 0.85rem;
+  }
+
+  footer a { color: rgba(255,255,255,0.8); text-decoration: none; }
+
+  .divider {
+    width: 60px; height: 1px;
+    background: var(--gold);
+    margin: 0 auto 1.5rem;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .hero-text { padding: 3rem 2rem; }
+    section { padding: 4rem 2rem; }
+    .about-grid { grid-template-columns: 1fr; }
+    nav { padding: 0 1.5rem; }
+    .nav-links { gap: 1.5rem; }
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-text > * {
+    animation: fadeUp 0.6s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero-name { animation-delay: 0.2s; }
+  .hero-name-zh { animation-delay: 0.3s; }
+  .hero-tagline { animation-delay: 0.4s; }
+  .hero-meta { animation-delay: 0.5s; }
+  .hero-contact { animation-delay: 0.6s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-name">Jiyeon Choi 崔至延</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Scholar · 學者</p>
+    <h1 class="hero-name">Jiyeon Choi</h1>
+    <p class="hero-name-zh">崔至延</p>
+    <p class="hero-tagline">Scholar of East Asian classical literature and digital humanities, bridging traditional philology and computational inquiry across Korea, China, Japan, and Taiwan.</p>
+    <div class="hero-meta">
+      <span>📍 Research Professor, Dankook University IHER</span>
+      <span>✉ neo_wandern@naver.com</span>
+      <span>🔗 ORCID: 0009-0003-2883-0997</span>
+    </div>
+    <div class="hero-contact">
+      <a href="mailto:neo_wandern@naver.com" class="btn btn-primary">Contact</a>
+      <a href="#" class="btn">Download CV</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-visual-inner">
+      <div class="hero-photo-placeholder">👤</div>
+      <p class="hero-visual-text">
+        East Asian Classical Literature<br>
+        Digital Humanities<br>
+        Sinographic Studies
+      </p>
+      <p class="hero-visual-zh">東亞古典文學 · 數位人文 · 漢字研究</p>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-header">
+    <h2 class="section-title">About</h2>
+    <span class="section-title-zh">關於我</span>
+  </div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Scholar of East Asian classical literature and digital humanities, with cross-regional research experience across Korea, China, Japan, and Taiwan. Specializing in comparative textual analysis, digital methodologies for humanities research, and digital humanities education — grounded in qualitative literary analysis and enriched by computational tools including AI/LLM applications.</p>
+      <p>I completed my Ph.D. in Chinese Ancient Classics at Beijing Normal University (2020), following MA training at the same institution. My academic trajectory spans undergraduate study in Korea, specialist research in Japan during my doctoral years, and postdoctoral work at Academia Sinica in Taiwan — giving me a lived, cross-cultural perspective that informs both my research and teaching.</p>
+      <p>Currently, I serve as Research Professor and Principal Investigator of an NRF-funded project at Dankook University's Institute for Han-character Education Research.</p>
+    </div>
+    <div class="about-sidebar">
+      <span class="sidebar-label">Research Interests · 研究興趣</span>
+      <ul class="interest-list">
+        <li>Comparative Study of East Asian Classical Texts<br><small style="color:var(--muted);font-size:0.8rem">東亞古典文本比較研究</small></li>
+        <li>Digital Methodologies for Humanities Research<br><small style="color:var(--muted);font-size:0.8rem">人文學研究的數位方法論</small></li>
+        <li>Digital Humanities Education<br><small style="color:var(--muted);font-size:0.8rem">數位人文教育</small></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research" style="background: var(--paper); max-width:100%; padding: 6rem 0;">
+  <div style="max-width:1100px; margin:0 auto; padding: 0 5rem;">
+    <div class="section-header">
+      <h2 class="section-title">Research</h2>
+      <span class="section-title-zh">研究</span>
+    </div>
+    <div class="research-grid">
+      <div class="research-card">
+        <span class="research-card-tag">Current Project · 現行計畫</span>
+        <h3>Digital Representation across Literary Chronotopes</h3>
+        <p>Korean Imagery in Classical Works from Colonial Taiwan. An interdisciplinary project digitally reconstructing literary space-time through cross-cultural textual analysis.</p>
+        <p class="research-card-funder">PI — NRF Academic Research Professor Grant (Jun 2025 – May 2030)</p>
+      </div>
+      <div class="research-card">
+        <span class="research-card-tag">Postdoctoral Research · 博士後研究</span>
+        <h3>GraphRAG-Based Comparative Database for the Imjin War</h3>
+        <p>Constructing a parallel reading database of the Veritable Records of the Ming Dynasty and the Annals of the Joseon Dynasty using GraphRAG and text alignment models. Accepted for DH2026.</p>
+        <p class="research-card-funder">Academia Sinica, Taipei (Jan–Dec 2025)</p>
+      </div>
+      <div class="research-card">
+        <span class="research-card-tag">Korean Sinographs · 韓國漢字</span>
+        <h3>Orthographic Evolution of Korean Sinographs</h3>
+        <p>Applying digital methods to identify distinctive evolutionary patterns in Korean sinograph orthography that diverge meaningfully from developments in China, Japan, and Taiwan.</p>
+        <p class="research-card-funder">Dankook University IHER</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-header">
+    <h2 class="section-title">Publications</h2>
+    <span class="section-title-zh">著作</span>
+  </div>
+
+  <div class="pub-filter">
+    <button class="filter-btn active" onclick="filterPubs('all', this)">All</button>
+    <button class="filter-btn" onclick="filterPubs('journal', this)">Journal Articles</button>
+    <button class="filter-btn" onclick="filterPubs('book', this)">Books & Translations</button>
+  </div>
+
+  <ul class="pub-list" id="pub-list">
+    <li class="pub-item" data-type="journal">
+      <span class="pub-year">2025</span>
+      <div>
+        <p class="pub-title">"A Study on Chinese Character Education Using Digital Platforms"</p>
+        <p class="pub-meta">Choi, Jiyeon & Lee, Hae-yun. <em>The Journal of Study on Language and Culture of Korea and China</em>, 75. <span class="pub-tag">Journal</span></p>
+      </div>
+    </li>
+    <li class="pub-item" data-type="journal">
+      <span class="pub-year">2024</span>
+      <div>
+        <p class="pub-title">"A Study on the Change of Chinese Characters in Korea Using the Database of Various Traditional Chinese Character Shapes Dictionary in Korea"</p>
+        <p class="pub-meta">Choi, Jiyeon & Shin, Yun-su. <em>The Journal of Korean Classics</em>, 66. <span class="pub-tag">Journal</span></p>
+      </div>
+    </li>
+    <li class="pub-item" data-type="journal">
+      <span class="pub-year">2023</span>
+      <div>
+        <p class="pub-title">"From Digital Archive to Digital Humanities: With a Focus on the Taiwan Case"</p>
+        <p class="pub-meta">Lee, Hae-yun & Choi, Jiyeon. <em>HANMUNHAKRONCHIP: Journal of Korean Literature in Chinese</em>, 65. <span class="pub-tag">Journal</span></p>
+      </div>
+    </li>
+    <li class="pub-item" data-type="journal">
+      <span class="pub-year">2023</span>
+      <div>
+        <p class="pub-title">"A Study on Educational Policies for Digital Humanities (Classics) in Taiwan and South Korea"</p>
+        <p class="pub-meta">Choi, Jiyeon & Lee, Hae-yun. <em>HANMUNHAKRONCHIP: Journal of Korean Literature in Chinese</em>, 64. <span class="pub-tag">Journal</span></p>
+      </div>
+    </li>
+    <li class="pub-item" data-type="journal">
+      <span class="pub-year">2022</span>
+      <div>
+        <p class="pub-title">"A Study on the Changes in the Shape of the Korean Chinese Characters by Period"</p>
+        <p class="pub-meta">Choi, Jiyeon. <em>Daedong Hanmunhak</em>, 70. <span class="pub-tag">Journal</span></p>
+      </div>
+    </li>
+    <li class="pub-item" data-type="book">
+      <span class="pub-year">2026</span>
+      <div>
+        <p class="pub-title">"From Digital Archives to Digital Humanities: Centering on the Case of Taiwan" <em>(Forthcoming)</em></p>
+        <p class="pub-meta">Choi, Jiyeon & Lee, Hae-yun. In <em>K-Humanities 2.0: New Themes in Digital Humanities</em>, National Kyungkook University Press. <span class="pub-tag">Book Chapter</span></p>
+      </div>
+    </li>
+    <li class="pub-item" data-type="book">
+      <span class="pub-year">2024</span>
+      <div>
+        <p class="pub-title">Pater's Detective Journal (偵探記)</p>
+        <p class="pub-meta">Li Yitao (Auth.), Choi, Jiyeon (Trans.). Busan: Teummaneun Chaekjang. <span class="pub-tag">Translation</span></p>
+      </div>
+    </li>
+    <li class="pub-item" data-type="book">
+      <span class="pub-year">2023–24</span>
+      <div>
+        <p class="pub-title">Sino-Korean Digital Humanities Vol. 1–2</p>
+        <p class="pub-meta">Kim, Woo-jung (Ed.), Choi, Jiyeon, et al. (Trans.). Seoul: Munyewon. <span class="pub-tag">Translation</span></p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- TEACHING -->
+<section id="teaching" style="background: var(--paper); max-width:100%; padding: 6rem 0;">
+  <div style="max-width:1100px; margin:0 auto; padding: 0 5rem;">
+    <div class="section-header">
+      <h2 class="section-title">Teaching</h2>
+      <span class="section-title-zh">教學</span>
+    </div>
+    <div class="teaching-grid">
+      <div class="teaching-card">
+        <p class="teaching-institution">Dankook University · 단국대학교</p>
+        <p class="teaching-period">2022 – 2024, Dept. of Sino-Korean Education</p>
+        <ul class="course-list">
+          <li>Understanding Creative Convergence Education</li>
+          <li>AI Educational Environments and the Future of Teaching</li>
+          <li>Theory of Sino-Korean Classics Education</li>
+          <li>Logic and Essay Writing in Sino-Korean Classics</li>
+        </ul>
+      </div>
+      <div class="teaching-card">
+        <p class="teaching-institution">Myongji University · 명지대학교</p>
+        <p class="teaching-period">2021 – 2022, Dept. of Chinese Language & Literature</p>
+        <ul class="course-list">
+          <li>Understanding Classical Chinese Texts</li>
+          <li>Chinese Language and Culture</li>
+          <li>Chinese Conversation I</li>
+        </ul>
+      </div>
+      <div class="teaching-card">
+        <p class="teaching-institution">Beijing Language & Culture University</p>
+        <p class="teaching-period">2017, BLCU · 北京語言大學</p>
+        <ul class="course-list">
+          <li>Korean-Chinese Interpretation: Techniques and Practice</li>
+        </ul>
+      </div>
+      <div class="teaching-card">
+        <p class="teaching-institution">Selected Workshops & Seminars</p>
+        <p class="teaching-period">2024 – 2026</p>
+        <ul class="course-list">
+          <li>Invited Instructor, DocuSky Workshop, Sungkyunkwan University (2024)</li>
+          <li>Invited Lecture, Yonsei University (2025)</li>
+          <li>Indigo DH Workshop, Dankook University (2026)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="divider"></div>
+  <p style="margin-bottom:0.5rem; color:rgba(255,255,255,0.85); font-family:'Cormorant Garamond',serif; font-size:1.1rem;">Jiyeon Choi 崔至延</p>
+  <p>Research Professor, Dankook University Institute for Han-character Education Research</p>
+  <p style="margin-top:0.5rem;"><a href="mailto:neo_wandern@naver.com">neo_wandern@naver.com</a></p>
+  <p style="margin-top:1.5rem; font-size:0.78rem; opacity:0.5;">© 2026 Jiyeon Choi</p>
+</footer>
+
+<script>
+function filterPubs(type, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.pub-item').forEach(item => {
+    if (type === 'all' || item.dataset.type === type) {
+      item.style.display = 'grid';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>

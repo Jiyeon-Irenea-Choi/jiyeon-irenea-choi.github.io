@@ -69,14 +69,15 @@
   .hero {
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     padding-top: 60px;
   }
 
   .hero-text {
     display: flex; flex-direction: column; justify-content: center;
-    padding: 5rem 4rem 5rem 5rem;
+    padding: 5rem 10rem;
     background: var(--cream);
+    max-width: 900px;
   }
 
   .hero-eyebrow {
@@ -491,31 +492,20 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-text">
-    <p class="hero-eyebrow">Scholar · 學者</p>
+    <p class="hero-eyebrow">學者 · 崔至延</p>
     <h1 class="hero-name">Jiyeon Choi</h1>
     <p class="hero-name-zh">崔至延</p>
     <p class="hero-tagline">Scholar of East Asian classical literature and digital humanities, bridging traditional philology and computational inquiry across Korea, China, Japan, and Taiwan.</p>
     <div class="hero-meta">
       <span>📍 Research Professor, Dankook University IHER</span>
-      <span>✉ neo_wandern@naver.com</span>
+      <span>✉ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b3ddd6dcecc4d2ddd7d6c1ddf3ddd2c5d6c19dd0dcde">[email&#160;protected]</a></span>
       <span>🔗 ORCID: 0009-0003-2883-0997</span>
     </div>
     <div class="hero-contact">
       <a href="mailto:neo_wandern@naver.com" class="btn btn-primary">Contact</a>
-      <a href="#" class="btn">Download CV</a>
     </div>
   </div>
-  <div class="hero-visual">
-    <div class="hero-visual-inner">
-      <div class="hero-photo-placeholder">👤</div>
-      <p class="hero-visual-text">
-        East Asian Classical Literature<br>
-        Digital Humanities<br>
-        Sinographic Studies
-      </p>
-      <p class="hero-visual-zh">東亞古典文學 · 數位人文 · 漢字研究</p>
-    </div>
-  </div>
+
 </div>
 
 <!-- ABOUT -->
@@ -528,7 +518,7 @@
     <div class="about-text">
       <p>Scholar of East Asian classical literature and digital humanities, with cross-regional research experience across Korea, China, Japan, and Taiwan. Specializing in comparative textual analysis, digital methodologies for humanities research, and digital humanities education — grounded in qualitative literary analysis and enriched by computational tools including AI/LLM applications.</p>
       <p>I completed my Ph.D. in Chinese Ancient Classics at Beijing Normal University (2020), following MA training at the same institution. My academic trajectory spans undergraduate study in Korea, specialist research in Japan during my doctoral years, and postdoctoral work at Academia Sinica in Taiwan — giving me a lived, cross-cultural perspective that informs both my research and teaching.</p>
-      <p>Currently, I serve as Research Professor and Principal Investigator of an NRF-funded project at Dankook University's Institute for Han-character Education Research.</p>
+      <p>Currently, I serve as Research Professor and <a href="https://www.nrf.re.kr" target="_blank" style="color:var(--accent); text-decoration:underline;">Principal Investigator of an NRF-funded project</a> at Dankook University's Institute for Han-character Education Research.</p>
     </div>
     <div class="about-sidebar">
       <span class="sidebar-label">Research Interests · 研究興趣</span>
@@ -551,19 +541,26 @@
     <div class="research-grid">
       <div class="research-card">
         <span class="research-card-tag">Current Project · 現行計畫</span>
-        <h3>Digital Representation across Literary Chronotopes</h3>
-        <p>Korean Imagery in Classical Works from Colonial Taiwan. An interdisciplinary project digitally reconstructing literary space-time through cross-cultural textual analysis.</p>
+        <h3>Digital Representation across Literary Chronotopes: Korean Imagery in Classical Works from Colonial Taiwan</h3>
+        <p>An interdisciplinary project digitally reconstructing literary space-time through cross-cultural textual analysis.</p>
         <p class="research-card-funder">PI — NRF Academic Research Professor Grant (Jun 2025 – May 2030)</p>
+        <div style="margin-top:1.2rem;">
+          <a href="NOTION_LINK_HERE" target="_blank" class="btn" style="font-size:0.82rem; padding:0.4rem 1rem;">Detail</a>
+        </div>
       </div>
       <div class="research-card">
         <span class="research-card-tag">Postdoctoral Research · 博士後研究</span>
-        <h3>GraphRAG-Based Comparative Database for the Imjin War</h3>
+        <h3>Constructing a Comparative Database of the Japanese Invasions of Korea (1592–1598) Using GraphRAG and Text Alignment Models</h3>
         <p>Constructing a parallel reading database of the Veritable Records of the Ming Dynasty and the Annals of the Joseon Dynasty using GraphRAG and text alignment models. Accepted for DH2026.</p>
         <p class="research-card-funder">Academia Sinica, Taipei (Jan–Dec 2025)</p>
+        <div style="margin-top:1.2rem; display:flex; gap:0.6rem; flex-wrap:wrap;">
+          <a href="NOTION_LINK_HERE" target="_blank" class="btn" style="font-size:0.82rem; padding:0.4rem 1rem;">Detail</a>
+          <a href="DATABASE_LINK_HERE" target="_blank" class="btn" style="font-size:0.82rem; padding:0.4rem 1rem;">對讀系統</a>
+        </div>
       </div>
       <div class="research-card">
         <span class="research-card-tag">Korean Sinographs · 韓國漢字</span>
-        <h3>Orthographic Evolution of Korean Sinographs</h3>
+        <h3>Building and Application of Database of Various Traditional Chinese Character Shapes Dictionary in Korea</h3>
         <p>Applying digital methods to identify distinctive evolutionary patterns in Korean sinograph orthography that diverge meaningfully from developments in China, Japan, and Taiwan.</p>
         <p class="research-card-funder">Dankook University IHER</p>
       </div>
@@ -588,35 +585,35 @@
     <li class="pub-item" data-type="journal">
       <span class="pub-year">2025</span>
       <div>
-        <p class="pub-title">"A Study on Chinese Character Education Using Digital Platforms"</p>
+        <p class="pub-title"><a href="JOURNAL_LINK_HERE" target="_blank" style="color:var(--ink); text-decoration:underline;">"A Study on Chinese Character Education Using Digital Platforms"</a></p>
         <p class="pub-meta">Choi, Jiyeon & Lee, Hae-yun. <em>The Journal of Study on Language and Culture of Korea and China</em>, 75. <span class="pub-tag">Journal</span></p>
       </div>
     </li>
     <li class="pub-item" data-type="journal">
       <span class="pub-year">2024</span>
       <div>
-        <p class="pub-title">"A Study on the Change of Chinese Characters in Korea Using the Database of Various Traditional Chinese Character Shapes Dictionary in Korea"</p>
+        <p class="pub-title"><a href="JOURNAL_LINK_HERE" target="_blank" style="color:var(--ink); text-decoration:underline;">"A Study on the Change of Chinese Characters in Korea Using the Database of Various Traditional Chinese Character Shapes Dictionary in Korea"</a></p>
         <p class="pub-meta">Choi, Jiyeon & Shin, Yun-su. <em>The Journal of Korean Classics</em>, 66. <span class="pub-tag">Journal</span></p>
       </div>
     </li>
     <li class="pub-item" data-type="journal">
       <span class="pub-year">2023</span>
       <div>
-        <p class="pub-title">"From Digital Archive to Digital Humanities: With a Focus on the Taiwan Case"</p>
+        <p class="pub-title"><a href="JOURNAL_LINK_HERE" target="_blank" style="color:var(--ink); text-decoration:underline;">"From Digital Archive to Digital Humanities: With a Focus on the Taiwan Case"</a></p>
         <p class="pub-meta">Lee, Hae-yun & Choi, Jiyeon. <em>HANMUNHAKRONCHIP: Journal of Korean Literature in Chinese</em>, 65. <span class="pub-tag">Journal</span></p>
       </div>
     </li>
     <li class="pub-item" data-type="journal">
       <span class="pub-year">2023</span>
       <div>
-        <p class="pub-title">"A Study on Educational Policies for Digital Humanities (Classics) in Taiwan and South Korea"</p>
+        <p class="pub-title"><a href="JOURNAL_LINK_HERE" target="_blank" style="color:var(--ink); text-decoration:underline;">"A Study on Educational Policies for Digital Humanities (Classics) in Taiwan and South Korea"</a></p>
         <p class="pub-meta">Choi, Jiyeon & Lee, Hae-yun. <em>HANMUNHAKRONCHIP: Journal of Korean Literature in Chinese</em>, 64. <span class="pub-tag">Journal</span></p>
       </div>
     </li>
     <li class="pub-item" data-type="journal">
       <span class="pub-year">2022</span>
       <div>
-        <p class="pub-title">"A Study on the Changes in the Shape of the Korean Chinese Characters by Period"</p>
+        <p class="pub-title"><a href="JOURNAL_LINK_HERE" target="_blank" style="color:var(--ink); text-decoration:underline;">"A Study on the Changes in the Shape of the Korean Chinese Characters by Period"</a></p>
         <p class="pub-meta">Choi, Jiyeon. <em>Daedong Hanmunhak</em>, 70. <span class="pub-tag">Journal</span></p>
       </div>
     </li>
@@ -630,14 +627,14 @@
     <li class="pub-item" data-type="book">
       <span class="pub-year">2024</span>
       <div>
-        <p class="pub-title">Pater's Detective Journal (偵探記)</p>
+        <p class="pub-title"><a href="BOOK_LINK_HERE" target="_blank" style="color:var(--ink); text-decoration:underline;">Pater's Detective Journal (偵探記)</a></p>
         <p class="pub-meta">Li Yitao (Auth.), Choi, Jiyeon (Trans.). Busan: Teummaneun Chaekjang. <span class="pub-tag">Translation</span></p>
       </div>
     </li>
     <li class="pub-item" data-type="book">
       <span class="pub-year">2023–24</span>
       <div>
-        <p class="pub-title">Sino-Korean Digital Humanities Vol. 1–2</p>
+        <p class="pub-title"><a href="BOOK_LINK_HERE" target="_blank" style="color:var(--ink); text-decoration:underline;">Sino-Korean Digital Humanities Vol. 1–2</a></p>
         <p class="pub-meta">Kim, Woo-jung (Ed.), Choi, Jiyeon, et al. (Trans.). Seoul: Munyewon. <span class="pub-tag">Translation</span></p>
       </div>
     </li>
@@ -656,10 +653,10 @@
         <p class="teaching-institution">Dankook University · 단국대학교</p>
         <p class="teaching-period">2022 – 2024, Dept. of Sino-Korean Education</p>
         <ul class="course-list">
-          <li>Understanding Creative Convergence Education</li>
-          <li>AI Educational Environments and the Future of Teaching</li>
-          <li>Theory of Sino-Korean Classics Education</li>
-          <li>Logic and Essay Writing in Sino-Korean Classics</li>
+          <li><a href="NOTION_LINK_HERE" target="_blank" style="color:var(--ink); text-decoration:underline;">Understanding Creative Convergence Education</a></li>
+          <li><a href="NOTION_LINK_HERE" target="_blank" style="color:var(--ink); text-decoration:underline;">AI Educational Environments and the Future of Teaching</a></li>
+          <li><a href="NOTION_LINK_HERE" target="_blank" style="color:var(--ink); text-decoration:underline;">Theory of Sino-Korean Classics Education</a></li>
+          <li><a href="NOTION_LINK_HERE" target="_blank" style="color:var(--ink); text-decoration:underline;">Logic and Essay Writing in Sino-Korean Classics</a></li>
         </ul>
       </div>
       <div class="teaching-card">
@@ -682,9 +679,9 @@
         <p class="teaching-institution">Selected Workshops & Seminars</p>
         <p class="teaching-period">2024 – 2026</p>
         <ul class="course-list">
-          <li>Invited Instructor, DocuSky Workshop, Sungkyunkwan University (2024)</li>
-          <li>Invited Lecture, Yonsei University (2025)</li>
-          <li>Indigo DH Workshop, Dankook University (2026)</li>
+          <li><a href="SEMINAR_LINK_HERE" target="_blank" style="color:var(--ink); text-decoration:underline;">Invited Instructor, DocuSky Workshop, Sungkyunkwan University (2024)</a></li>
+          <li><a href="SEMINAR_LINK_HERE" target="_blank" style="color:var(--ink); text-decoration:underline;">Invited Lecture, Yonsei University (2025)</a></li>
+          <li><a href="SEMINAR_LINK_HERE" target="_blank" style="color:var(--ink); text-decoration:underline;">Indigo DH Workshop, Dankook University (2026)</a></li>
         </ul>
       </div>
     </div>
@@ -696,23 +693,8 @@
   <div class="divider"></div>
   <p style="margin-bottom:0.5rem; color:rgba(255,255,255,0.85); font-family:'Cormorant Garamond',serif; font-size:1.1rem;">Jiyeon Choi 崔至延</p>
   <p>Research Professor, Dankook University Institute for Han-character Education Research</p>
-  <p style="margin-top:0.5rem;"><a href="mailto:neo_wandern@naver.com">neo_wandern@naver.com</a></p>
+  <p style="margin-top:0.5rem;"><a href="/cdn-cgi/l/email-protection#d9b7bcb686aeb8b7bdbcabb799b7b8afbcabf7bab6b4"><span class="__cf_email__" data-cfemail="2f414a4070584e414b4a5d416f414e594a5d014c4042">[email&#160;protected]</span></a></p>
   <p style="margin-top:1.5rem; font-size:0.78rem; opacity:0.5;">© 2026 Jiyeon Choi</p>
 </footer>
 
-<script>
-function filterPubs(type, btn) {
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.pub-item').forEach(item => {
-    if (type === 'all' || item.dataset.type === type) {
-      item.style.display = 'grid';
-    } else {
-      item.style.display = 'none';
-    }
-  });
-}
-</script>
-
-</body>
-</html>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.m

@@ -71,6 +71,21 @@
     display: grid;
     grid-template-columns: 1fr;
     padding-top: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-map-img {
+    position: absolute;
+    top: -5%; right: -5%;
+    width: 75%;
+    height: 115%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.22;
+    filter: sepia(0.6) contrast(1.05) brightness(0.9);
+    mix-blend-mode: multiply;
+    pointer-events: none;
   }
 
   .hero-text {
@@ -491,18 +506,74 @@
 
 <!-- HERO -->
 <div class="hero">
+
+  <!-- Historical Map (uploaded to GitHub repository) -->
+  <img
+    class="hero-map-img"
+    src="map.jpg"
+    alt="Historical Map of East Asia"
+  />
+
+  <!-- City dots overlay -->
+  <svg class="hero-map-overlay" viewBox="0 0 700 800" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg"
+    style="position:absolute;top:0;right:0;width:72%;height:100%;pointer-events:none;">
+
+    <defs>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+        <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L6,3 z" fill="#b8963e" opacity="0.8"/>
+      </marker>
+    </defs>
+
+    <!-- Animated route lines -->
+    <path d="M310,340 Q260,300 230,260" stroke="#b8963e" stroke-width="1.8" fill="none" stroke-dasharray="8 5" opacity="0.85">
+      <animate attributeName="stroke-dashoffset" from="0" to="-100" dur="8s" repeatCount="indefinite"/>
+    </path>
+    <path d="M310,340 Q420,330 480,340" stroke="#b8963e" stroke-width="1.8" fill="none" stroke-dasharray="8 5" opacity="0.85">
+      <animate attributeName="stroke-dashoffset" from="0" to="-100" dur="10s" repeatCount="indefinite"/>
+    </path>
+    <path d="M310,340 Q300,430 295,490" stroke="#b8963e" stroke-width="1.8" fill="none" stroke-dasharray="8 5" opacity="0.85">
+      <animate attributeName="stroke-dashoffset" from="0" to="-100" dur="9s" repeatCount="indefinite"/>
+    </path>
+    <path d="M230,260 Q260,370 295,490" stroke="#b8963e" stroke-width="1.5" fill="none" stroke-dasharray="6 5" opacity="0.6">
+      <animate attributeName="stroke-dashoffset" from="0" to="-100" dur="12s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Seoul -->
+    <circle cx="310" cy="340" r="7" fill="#2c5f8a" opacity="0.9" filter="url(#glow)"/>
+    <circle cx="310" cy="340" r="12" fill="none" stroke="#2c5f8a" stroke-width="1" opacity="0.4"/>
+    <text x="322" y="336" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1a1a2e" opacity="0.95" font-style="italic">Seoul</text>
+
+    <!-- Beijing -->
+    <circle cx="230" cy="260" r="7" fill="#2c5f8a" opacity="0.9" filter="url(#glow)"/>
+    <circle cx="230" cy="260" r="12" fill="none" stroke="#2c5f8a" stroke-width="1" opacity="0.4"/>
+    <text x="242" y="256" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1a1a2e" opacity="0.95" font-style="italic">北京 Beijing</text>
+
+    <!-- Osaka -->
+    <circle cx="480" cy="340" r="6" fill="#2c5f8a" opacity="0.9" filter="url(#glow)"/>
+    <circle cx="480" cy="340" r="10" fill="none" stroke="#2c5f8a" stroke-width="1" opacity="0.4"/>
+    <text x="492" y="336" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1a1a2e" opacity="0.95" font-style="italic">Ōsaka</text>
+
+    <!-- Taipei -->
+    <circle cx="295" cy="490" r="6" fill="#2c5f8a" opacity="0.9" filter="url(#glow)"/>
+    <circle cx="295" cy="490" r="10" fill="none" stroke="#2c5f8a" stroke-width="1" opacity="0.4"/>
+    <text x="307" y="486" font-family="Cormorant Garamond, Georgia, serif" font-size="13" fill="#1a1a2e" opacity="0.95" font-style="italic">臺北 Taipei</text>
+  </svg>
+
   <div class="hero-text">
-    <p class="hero-eyebrow">學者 · 崔至延</p>
     <h1 class="hero-name">Jiyeon Choi</h1>
     <p class="hero-name-zh">崔至延</p>
     <p class="hero-tagline">Scholar of East Asian classical literature and digital humanities, bridging traditional philology and computational inquiry across Korea, China, Japan, and Taiwan.</p>
     <div class="hero-meta">
       <span>📍 Research Professor, Dankook University IHER</span>
-      <span>✉ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b3ddd6dcecc4d2ddd7d6c1ddf3ddd2c5d6c19dd0dcde">[email&#160;protected]</a></span>
+      <span>✉ <a href="/cdn-cgi/l/email-protection#1a747f75456d7b747e7f68745a747b6c7f6834797577" style="color:var(--muted); text-decoration:none;"><span class="__cf_email__" data-cfemail="d6b8b3b989a1b7b8b2b3a4b896b8b7a0b3a4f8b5b9bb">[email&#160;protected]</span></a></span>
       <span>🔗 ORCID: 0009-0003-2883-0997</span>
     </div>
     <div class="hero-contact">
-      <a href="mailto:neo_wandern@naver.com" class="btn btn-primary">Contact</a>
+      <a href="/cdn-cgi/l/email-protection#fc929993a38b9d9298998e92bc929d8a998ed29f9391" class="btn btn-primary">Contact</a>
     </div>
   </div>
 
@@ -693,8 +764,4 @@
   <div class="divider"></div>
   <p style="margin-bottom:0.5rem; color:rgba(255,255,255,0.85); font-family:'Cormorant Garamond',serif; font-size:1.1rem;">Jiyeon Choi 崔至延</p>
   <p>Research Professor, Dankook University Institute for Han-character Education Research</p>
-  <p style="margin-top:0.5rem;"><a href="/cdn-cgi/l/email-protection#d9b7bcb686aeb8b7bdbcabb799b7b8afbcabf7bab6b4"><span class="__cf_email__" data-cfemail="2f414a4070584e414b4a5d416f414e594a5d014c4042">[email&#160;protected]</span></a></p>
-  <p style="margin-top:1.5rem; font-size:0.78rem; opacity:0.5;">© 2026 Jiyeon Choi</p>
-</footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.m
+  <p style="margin-top:0.5rem;"><a href="/cdn-cgi/l/email-protection#305e555f6f47515e5455425e705e514655421e53

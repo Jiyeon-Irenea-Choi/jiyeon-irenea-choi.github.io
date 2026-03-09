@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Representation across Literary Chronotopes | Jiyeon Choi</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Serif+TC:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a2e;
+    --accent: #2c5f8a;
+    --accent-light: #4a8ab5;
+    --gold: #b8963e;
+    --cream: #f9f6f0;
+    --paper: #ffffff;
+    --muted: #6b7280;
+    --border: #e2ddd6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'EB Garamond', 'Noto Serif TC', Georgia, serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.85;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(249,246,240,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 3rem;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 60px;
+  }
+  .nav-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--ink); text-decoration: none;
+  }
+  .nav-back {
+    font-size: 0.85rem; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-back:hover { color: var(--accent); }
+
+  /* HERO */
+  .project-hero {
+    padding: 8rem 5rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .project-tag {
+    font-size: 0.78rem; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 1.2rem; display: block;
+  }
+  .project-title-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 400; line-height: 1.25;
+    color: var(--ink); margin-bottom: 0.6rem;
+  }
+  .project-title-ko {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem; font-weight: 300;
+    color: var(--muted); margin-bottom: 2rem;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+  }
+  .project-meta-bar {
+    display: flex; flex-wrap: wrap; gap: 1.5rem;
+    padding: 1.2rem 1.5rem;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--gold);
+    margin-bottom: 3rem;
+    font-size: 0.88rem; color: var(--muted);
+  }
+  .project-meta-bar span { display: flex; align-items: center; gap: 0.4rem; }
+  .project-meta-bar a { color: var(--accent); text-decoration: underline; }
+
+  /* LANG TABS */
+  .lang-tabs {
+    display: flex; gap: 0; margin-bottom: 2.5rem;
+    border-bottom: 2px solid var(--border);
+    max-width: 900px; margin: 0 auto 2.5rem;
+    padding: 0 5rem;
+  }
+  .lang-tab {
+    padding: 0.6rem 1.8rem;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.9rem; letter-spacing: 0.06em;
+    border: none; background: transparent;
+    cursor: pointer; color: var(--muted);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.2s;
+  }
+  .lang-tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    font-weight: 600;
+  }
+  .lang-tab:hover { color: var(--accent); }
+
+  /* CONTENT */
+  .project-content {
+    max-width: 900px; margin: 0 auto;
+    padding: 0 5rem 6rem;
+  }
+  .lang-panel { display: none; }
+  .lang-panel.active { display: block; }
+
+  .content-section { margin-bottom: 3rem; }
+  .content-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 600;
+    color: var(--ink); margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .content-section p { margin-bottom: 1rem; color: var(--ink); }
+  .content-section ul {
+    list-style: none; padding: 0;
+  }
+  .content-section ul li {
+    padding: 0.5rem 0;
+    padding-left: 1.2rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--ink);
+    position: relative;
+  }
+  .content-section ul li::before {
+    content: "—"; color: var(--accent);
+    position: absolute; left: 0;
+  }
+  .content-section ul li:last-child { border-bottom: none; }
+
+  .keywords {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem;
+  }
+  .keyword-tag {
+    font-size: 0.78rem; letter-spacing: 0.08em;
+    padding: 0.25rem 0.8rem;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    background: var(--paper);
+  }
+
+  .phase-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  .phase-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
+    padding: 1.5rem;
+  }
+  .phase-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-weight: 600;
+    color: var(--accent); margin-bottom: 0.6rem;
+  }
+  .phase-card p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+
+  /* FOOTER */
+  .project-footer {
+    text-align: center; padding: 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: var(--muted);
+  }
+  .project-footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 768px) {
+    .project-hero { padding: 6rem 2rem 3rem; }
+    .lang-tabs { padding: 0 2rem; }
+    .project-content { padding: 0 2rem 4rem; }
+    .phase-grid { grid-template-columns: 1fr; }
+    nav { padding: 0 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-name">Jiyeon Choi 崔至延</a>
+  <a href="index.html#research" class="nav-back">← Back to Research</a>
+</nav>
+
+<div class="project-hero">
+  <span class="project-tag">Current Project · NRF Academic Research Fellowship (A Type) · 2025–2030</span>
+  <h1 class="project-title-en">Digital Representation across Literary Chronotopes:<br>Korean Imagery in Classical Works from Colonial Taiwan</h1>
+  <p class="project-title-ko">디지털로 재현하는 문학의 시공간 –<br>일제시기 타이완의 文言小說, 漢詩, 遊記에 드러난 조선 인식 –</p>
+  <div class="project-meta-bar">
+    <span>Jun 2025 – May 2030</span>
+    <span><a href="https://eng.nrf.re.kr/page/5301bb32-ad33-4031-8de1-a8b3275956a2?bizNo=2" target="_blank">NRF Academic Research Fellowship (A Type)</a></span>
+  </div>
+</div>
+
+<!-- LANG TABS -->
+<div class="lang-tabs">
+  <button class="lang-tab" onclick="switchLang('ko', this)">한국어</button>
+  <button class="lang-tab active" onclick="switchLang('en', this)">English</button>
+</div>
+
+<div class="project-content">
+
+  <!-- KOREAN -->
+  <div class="lang-panel" id="panel-ko">
+
+    <div class="content-section">
+      <h2>연구 목표</h2>
+      <p>본 연구는 일제시기(1895–1945) 타이완의 문언소설(文言小說), 한시(漢詩), 유기(遊記)에 드러난 조선 표상을 대상으로, 조선에 대한 인식 변화 과정을 분석하고, 디지털 기술을 활용하여 일제시기 타이완의 조선 인식을 새롭게 재현해 내고자 한다. 이를 통해 텍스트에 내재된 식민지 시기 타자 인식의 복합적 양상을 규명하고, 전통 문학 장르가 근대적 인식을 담아내는 매개체로 작용하는 과정을 드러냄으로써, 동아시아 근대 문학 연구에 새로운 지평을 열어갈 것으로 기대한다.</p>
+      <p>이상의 목표를 달성하기 위해 서로 긴밀히 연계된 세 가지 연구를 통합적으로 진행한다.</p>
+      <ul>
+        <li><strong>고전과 근대의 관계 재정립을 통한 문학 연구</strong> — 근대를 전통과의 단절이 아닌 연속성과 변화의 관점에서 재해석</li>
+        <li><strong>타이완의 조선 인식 분석을 통한 사회문화 연구</strong> — 식민지 경험을 공유한 두 지역 간의 복합적 관계 규명</li>
+        <li><strong>조선 표상의 디지털 재현을 통한 디지털 인문학 연구</strong> — 멀리서 읽기(distant reading)와 가까이 읽기(close reading) 결합</li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <h2>연구 단계</h2>
+      <div class="phase-grid">
+        <div class="phase-card">
+          <h3>1단계 — 개별 연구</h3>
+          <p>리이타오(李逸濤)의 문언소설 「한국시승」·「춘향전」(1906)과 웨이칭더(魏清德)의 유기·한시(1936) 비교 분석을 통해 조선 표상의 변화 양상 포착</p>
+        </div>
+        <div class="phase-card">
+          <h3>2단계 — 종합 연구</h3>
+          <p>1895–1945년 다양한 매체의 조선 표상 자료를 수집·디지털화. 1924년 셰춘무(謝春木)의 조선여행기를 기점으로 간접적 인식 시기(1895–1924)와 직접적 인식 시기(1924–1945)로 구분 분석</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2>연구 방법</h2>
+      <p>전통적 문헌학적 접근과 디지털 인문학 방법론을 결합한다. 문헌학적 접근으로 작품의 번역과 주석 작업을 수행하며, 디지털 방법론으로는 DocuSky, QGIS, Palladio, MARKUS 등을 활용하여 텍스트에 나타난 장소, 인물, 감정 표현 등을 마크업하고 시각화한다.</p>
+      <p>최종적으로는 시간의 흐름에 따른 인식 변화를 보여주는 타임라인, 여행 경로와 문학적 표상을 중첩 표시한 GIS 기반 지도, 주요 텍스트의 원문과 번역 데이터를 활용하여 디지털로 재현할 예정이다.</p>
+    </div>
+
+    <div class="content-section">
+      <h2>기대 효과</h2>
+      <ul>
+        <li>동아시아 근대문학 연구의 새로운 시각 제시</li>
+        <li>디지털 연구 방법의 한문 고전 연구 적용 및 확장</li>
+        <li>한국–타이완 간 역사적 관계 이해 증진</li>
+        <li>디지털 인문학 교육 및 대중적 접근성 확대</li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <h2>키워드</h2>
+      <div class="keywords">
+        <span class="keyword-tag">일제시기</span>
+        <span class="keyword-tag">타이완</span>
+        <span class="keyword-tag">한문 고전 문학</span>
+        <span class="keyword-tag">조선 인식</span>
+        <span class="keyword-tag">디지털 재현</span>
+        <span class="keyword-tag">시공간</span>
+      </div>
+    </div>
+
+  </div><!-- /panel-ko -->
+
+  <!-- ENGLISH -->
+  <div class="lang-panel active" id="panel-en">
+
+    <div class="content-section">
+      <h2>Research Objectives</h2>
+      <p>This project analyzes the representation of Joseon (Korea) in classical Chinese-language fiction, poetry, and travel writing produced in colonial-era Taiwan (1895–1945), examining how Taiwanese perceptions of Joseon shifted over this period. Through digital methods, it aims to reconstruct the literary chronotopes of that era, revealing the complex ways in which traditional genres mediated modern colonial consciousness.</p>
+      <p>Three interconnected research strands are pursued:</p>
+      <ul>
+        <li><strong>Literary study</strong> — Reinterpreting the relationship between classical and modern through continuity rather than rupture</li>
+        <li><strong>Sociocultural study</strong> — Tracing the evolving perception of Joseon among Taiwanese writers who shared colonial experience</li>
+        <li><strong>Digital humanities study</strong> — Combining distant reading and close reading to produce new forms of digital representation</li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <h2>Research Phases</h2>
+      <div class="phase-grid">
+        <div class="phase-card">
+          <h3>Phase 1 — Individual Case Studies</h3>
+          <p>Comparative analysis of Li Yitao's classical fiction "Korean Monk" and "Chunhyangjeon" (1906) and Wei Qingde's travel writing and poetry (1936), tracing the transformation of Joseon imagery from imagined to experiential space.</p>
+        </div>
+        <div class="phase-card">
+          <h3>Phase 2 — Comprehensive Study</h3>
+          <p>Systematic collection and digitization of Joseon-related materials from Taiwanese media (1895–1945), divided into indirect perception (1895–1924) and direct perception (1924–1945) periods, with Xie Chunmu's 1924 travel record as the turning point.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section">
+      <h2>Methodology</h2>
+      <p>The project integrates traditional philological methods with digital humanities tools. Philological work includes translation and annotation of primary texts. Digital methods employ DocuSky, QGIS, Palladio, and MARKUS for markup and visualization of places, figures, and emotional expression within texts.</p>
+      <p>Final outputs will include a timeline showing evolving perceptions, GIS-based maps overlaying travel routes with literary representations, and digital reconstructions drawing on original texts and translations.</p>
+    </div>
+
+    <div class="content-section">
+      <h2>Expected Contributions</h2>
+      <ul>
+        <li>New perspectives on East Asian modern literary history</li>
+        <li>Methodological expansion of digital approaches to classical Chinese studies</li>
+        <li>Deepened understanding of Korea–Taiwan historical relations</li>
+        <li>Enhanced accessibility of digital humanities education and research</li>
+      </ul>
+    </div>
+
+    <div class="content-section">
+      <h2>Keywords</h2>
+      <div class="keywords">
+        <span class="keyword-tag">Japanese colonial period</span>
+        <span class="keyword-tag">Taiwan</span>
+        <span class="keyword-tag">Classical Chinese literature</span>
+        <span class="keyword-tag">Perception of Joseon</span>
+        <span class="keyword-tag">Digital representation</span>
+        <span class="keyword-tag">Time-space</span>
+      </div>
+    </div>
+
+  </div><!-- /panel-en -->
+
+</div><!-- /project-content -->
+
+<div class="project-footer">
+  <a href="index.html#research">← Back to Research & Projects</a>
+  &nbsp;·&nbsp;
+  <a href="https://eng.nrf.re.kr/page/5301bb32-ad33-4031-8de1-a8b3275956a2?bizNo=2" target="_blank">NRF Fellowship Program</a>
+</div>
+
+<script>
+  function switchLang(lang, btn) {
+    document.querySelectorAll('.lang-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.lang-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + lang).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>

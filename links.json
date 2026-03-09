@@ -1,0 +1,90 @@
+[
+  {
+    "title": "National Museum of Taiwan Literature Database",
+    "title_zh": "臺灣文學館數位資料庫",
+    "url": "https://www.nmtl.gov.tw/",
+    "description": "Digital archive of Taiwan literature collections",
+    "tag": "Archive",
+    "image": ""
+  },
+  {
+    "title": "DocuSky",
+    "title_zh": "臺灣大學數位人文研究中心",
+    "url": "https://docusky.org.tw",
+    "description": "Digital humanities research platform, National Taiwan University",
+    "tag": "Platform",
+    "image": ""
+  },
+  {
+    "title": "DEDU Multilingual Text Alignment",
+    "title_zh": "多語言文本自動對齊",
+    "url": "https://dedu.dila.edu.tw/home/",
+    "description": "Automated multilingual text alignment tool",
+    "tag": "Tool",
+    "image": ""
+  },
+  {
+    "title": "Academia Sinica DH Platform",
+    "title_zh": "中央研究院數位人文研究平台",
+    "url": "https://dh.ascdc.sinica.edu.tw",
+    "description": "Digital humanities research platform, Academia Sinica",
+    "tag": "Platform",
+    "image": ""
+  },
+  {
+    "title": "OCR & Collation Platform",
+    "title_zh": "文字辨識及校勘平台",
+    "url": "https://ocr.ascdc.tw/",
+    "description": "Character recognition and textual collation platform, Academia Sinica",
+    "tag": "Tool",
+    "image": ""
+  },
+  {
+    "title": "YouFun: Archive of Buddhist Pilgrimage Records",
+    "title_zh": "遊方：歷代僧侶行腳紀錄",
+    "url": "https://youfun.litphil.sinica.edu.tw",
+    "description": "Historical archive of Buddhist monks' travel and practice records",
+    "tag": "Archive",
+    "image": ""
+  },
+  {
+    "title": "Map of Disease Sensations",
+    "title_zh": "疾病感覺地圖",
+    "url": "https://dh-illnesses.litphil.sinica.edu.tw/",
+    "description": "Spatial humanities project mapping historical illness perceptions",
+    "tag": "Project",
+    "image": ""
+  },
+  {
+    "title": "古籍漢字辨識 — Korea Institute",
+    "title_zh": "國學振興院古籍漢字辨識",
+    "url": "https://www.koreastudy.or.kr/pubConts.do?menu_seq=1087&menu_type=C&board_seq=&pub_se=&board_cate=",
+    "description": "Classical Chinese character recognition, Korea Institute for the Promotion of Korean Studies",
+    "tag": "Tool",
+    "image": ""
+  },
+  {
+    "title": "Korean Classics Comprehensive DB",
+    "title_zh": "韓國古典綜合DB",
+    "url": "https://db.itkc.or.kr/",
+    "description": "Comprehensive database of Korean classical texts",
+    "tag": "Database",
+    "image": ""
+  },
+  {
+    "title": "Public Data Portal",
+    "title_zh": "公共數據庫",
+    "url": "https://www.data.go.kr/",
+    "description": "Korea open government data portal",
+    "tag": "Database",
+    "image": ""
+  },
+  {
+    "title": "Peking University Digital Humanities Center",
+    "title_zh": "北京大學數字人文研究中心",
+    "url": "https://pkudh.org/",
+    "description": "Digital humanities research center, Peking University",
+    "tag": "Platform",
+    "image": ""
+  }
+]
